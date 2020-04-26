@@ -1,6 +1,5 @@
 function semanticseg_probability(imds_subject, net1, prediction_folder)
 
-fprintf('\n')
 fprintf('  * predicting segmentation per image : 000');
 for i_idx = 1:length(imds_subject.Files)
     

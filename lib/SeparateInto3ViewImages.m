@@ -1,4 +1,7 @@
-function SeparateInto3ViewImages(feature_mat_folder, feature_list)
+function SeparateInto3ViewImages(feature_mat_folder, parameter_type)
+
+% Get the feature list
+feature_list = get_feature_list(parameter_type);
 
 % Prepare output folders
 separated_images_folder = fullfile(feature_mat_folder, 'images');
@@ -22,10 +25,9 @@ if isempty(dir(fullfile(separated_images_folder, 'coronal', 'feat-*mat')))
         x_feature(:, :, :, f_idx) = mat.parameter_map;
     end
     
-    % TODO: Padding... 
     % Training image size is [112, 144, 96]
-    x_feature = x_feature(17:128,17:160,19:114, :);
-
+    x_feature = padding_unpadding(x_feature, [112, 144, 96], 'padding');
+    
     % Backgroud voxels to -100
     x_feature(isnan(x_feature))= -100;
 

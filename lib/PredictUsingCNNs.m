@@ -1,4 +1,7 @@
-function PredictUsingCNNs(feature_mat_folder, Unet_folder)
+function PredictUsingCNNs(feature_mat_folder, parameter_type)
+
+% Get CNN model folder
+Unet_folder = get_CNN_model(parameter_type);
 
 predicted_segmentation_folder = fullfile(feature_mat_folder, 'prediction');
 
