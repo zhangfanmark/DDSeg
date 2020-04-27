@@ -7,9 +7,10 @@ if strcmp(padding_or_unpadding, 'padding')
     
     target_sizes = [144, 144, 96; 
                    256, 256, 96;
-                   256, 256, 128;];
+                   256, 256, 128;
+                   256, 256, 160;];
     
-    for t_idx = 1:3
+    for t_idx = 1:size(target_sizes,1)
         target_size = target_sizes(t_idx, :);
         
         if sum(target_size >= image_size(1:3)) == 3
