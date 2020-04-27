@@ -52,5 +52,5 @@ if isempty(dir(fullfile(separated_images_folder, 'coronal', 'feat-*mat')))
 
 else
     
-    disp('  * image feature mat has been created.') 
+    disp('  * Already done!') 
 end

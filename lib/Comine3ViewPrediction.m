@@ -10,7 +10,7 @@ if ~exist(segmention_prediction_3view_mat, 'file')
         
         view = views{v_idx};
         
-        disp(['  * combine prediction: ', view]);
+        disp([' - combine prediction: ', view]);
         
         prediction_folder = fullfile(feature_mat_folder, 'prediction', view);
         prediction_mat_files = dir(fullfile(prediction_folder, 'feat*mat'));
@@ -52,5 +52,5 @@ if ~exist(segmention_prediction_3view_mat, 'file')
     
 else
     
-    disp('  * Combine 3-view predictions has done!')
+    disp('  * Already done!')
 end

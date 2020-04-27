@@ -30,7 +30,7 @@ for v_idx = 1:length(views)
         
     else
         
-        disp('  * Predicting has done!')
+        disp('  * Aleady done!')
     end
 
 end

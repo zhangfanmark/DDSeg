@@ -1,7 +1,7 @@
 function feature_list = get_feature_list(parameter_type)
 
 if strcmp(parameter_type, 'DTI')
-    feature_list = {'DTI_fa', 'DTI_md', 'DTI_e1', 'DTI_e2', 'DTI_e3'};
+    feature_list = {'DTI_FA', 'DTI_MD', 'DTI_E1', 'DTI_E2', 'DTI_E3'};
 
 elseif strcmp(parameter_type, 'MKCurve')
     feature_list = {'corrected_FA', 'corrected_E1', 'corrected_E2', 'corrected_E3',...
