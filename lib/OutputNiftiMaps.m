@@ -1,6 +1,6 @@
-function OutputNiftiMaps(feature_mat_folder, mask_nii_path)
+function OutputNiftiMaps(feature_mat_folder, mask_nii_path, output_folder)
 
-if ~exist(fullfile(feature_mat_folder, 'prediction', 'ProbabilisticMap_CSF.nii.gz'), 'file')
+if ~exist(fullfile(output_folder, 'ProbabilisticMap_CSF.nii.gz'), 'file')
 
     mask_nii = load_nii(mask_nii_path);
     img_size = size(mask_nii.img);
@@ -32,7 +32,7 @@ if ~exist(fullfile(feature_mat_folder, 'prediction', 'ProbabilisticMap_CSF.nii.g
     % output nifti images
     disp('  * output segmentation');
     mask_nii.img = single(prediction_categorical_map);
-    save_nii(mask_nii, char(fullfile(feature_mat_folder, 'prediction', 'SegmentationMap_GMWMCSF.nii.gz')));
+    save_nii(mask_nii, char(fullfile(output_folder, 'SegmentationMap_GMWMCSF.nii.gz')));
 
     disp('  * output probabilistic maps of GM, WM and CSF');
 
@@ -41,13 +41,13 @@ if ~exist(fullfile(feature_mat_folder, 'prediction', 'ProbabilisticMap_CSF.nii.g
     mask_nii.hdr.dime.bitpix = 32;
 
     mask_nii.img = single(prediction_probabilistic_map_GM);
-    save_nii(mask_nii, char(fullfile(feature_mat_folder, 'prediction', 'ProbabilisticMap_GM.nii.gz')));
+    save_nii(mask_nii, char(fullfile(output_folder, 'ProbabilisticMap_GM.nii.gz')));
 
     mask_nii.img = single(prediction_probabilistic_map_WM);
-    save_nii(mask_nii, char(fullfile(feature_mat_folder, 'prediction', 'ProbabilisticMap_WM.nii.gz')));
+    save_nii(mask_nii, char(fullfile(output_folder, 'ProbabilisticMap_WM.nii.gz')));
 
     mask_nii.img = single(prediction_probabilistic_map_CSF);
-    save_nii(mask_nii, char(fullfile(feature_mat_folder, 'prediction', 'ProbabilisticMap_CSF.nii.gz')));
+    save_nii(mask_nii, char(fullfile(output_folder, 'ProbabilisticMap_CSF.nii.gz')));
     
 else
     

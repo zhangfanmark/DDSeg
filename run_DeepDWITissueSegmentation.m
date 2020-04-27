@@ -1,5 +1,7 @@
 function run_DeepDWITissueSegmentation(input_feature_img_folder, input_mask_nii_file, parameter_type, output_folder)
 
+addpath(genpath('lib'));
+
 disp(' ')
 disp('====================================================');
 disp('======  **  Deep DWI tissue segmentation  **  ======');
@@ -27,5 +29,5 @@ Comine3ViewPrediction(feature_mat_folder);
 
 disp(' ')
 disp('=== 5. Output segmentation results ===');
-OutputNiftiMaps(feature_mat_folder, input_mask_nii_file);
+OutputNiftiMaps(feature_mat_folder, input_mask_nii_file, output_folder);
 

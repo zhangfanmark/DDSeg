@@ -1,4 +1,4 @@
-function run_DTI_feature_extraction(nii_file, bval_file, bvec_file, ouput_folder)
+function run_DTI_feature_extraction_3DSlicer(nii_file, bval_file, bvec_file, ouput_folder)
 
 
 %% Run DTI feature extraction using 3D Slicer
