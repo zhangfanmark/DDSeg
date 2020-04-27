@@ -1,4 +1,4 @@
-function run_subject_prediction(input_feature_img_folder, input_mask_nii_file, parameter_type, output_folder)
+function run_DeepDWITissueSegmentation(input_feature_img_folder, input_mask_nii_file, parameter_type, output_folder)
 
 disp(' ')
 disp('====================================================');
