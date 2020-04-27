@@ -11,3 +11,6 @@ Please download the pre-trained CNN models and testing data:
 Download `Unet-DTI-n5-ATloss-GMWMCSF.zip` and `Unet-MKCurve-n10-ATloss-GMWMCSF.zip`, and uncompress them to the `CNN-models` folder.
 
 Download `test_sub_CAP.zip` and `test_sub_HCP.zip`, and uncompress them to the `test` folder.
+
+# Example
+The code allows tissue segmentation using DTI parameters (single shell dMRI data) and using MKCurve (multi shell dMRI data with MKCurve corrected data). See scripts under the `test` folder for examples.
