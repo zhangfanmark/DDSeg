@@ -8,12 +8,6 @@ for i_idx = 1:length(imds_subject.Files)
         
    imd_path = imds_subject.Files{i_idx};
    [~,imd_name,~] = fileparts(imd_path);
-    
-   try
-        gpuDevice;
-   catch
-        warning('no GPU avaiable, thus using CPU.');
-   end
    
    I = load(imd_path);
    [C, score, allScores] = semanticseg(I.x, net1);

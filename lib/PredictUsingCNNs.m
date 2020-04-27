@@ -1,5 +1,11 @@
 function PredictUsingCNNs(feature_mat_folder, parameter_type)
 
+try
+    gpuDevice;
+catch
+    warning('no GPU avaiable, thus using CPU.');
+end
+
 % Get CNN model folder
 Unet_folder = get_CNN_model(parameter_type);
 
