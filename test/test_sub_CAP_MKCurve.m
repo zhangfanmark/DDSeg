@@ -1,6 +1,6 @@
 addpath(genpath('lib'));
 
-%% example to run tissue segmentation using DTI parameters
+%% example to run tissue segmentation using MK-Curve parameters
 
 input_nii_file      = 'test/test_sub_CAP/CAP-dwi.nii.gz';
 input_bval_file     = 'test/test_sub_CAP/CAP-dwi.bval';
@@ -12,7 +12,7 @@ if ~exist(MKCurve_folder, 'dir')
     mkdir(MKCurve_folder)
 end
 
-% DTI parameter is better on high-b multi shell DWI, so here we extract only
+% MK-Curve is better on high-b multi shell DWI, so here we extract only
 % b=1000, 3000 data.
 out_nii_file    = 'test/test_sub_CAP/MKCurve/CAP-dwi-b1000-b3000.nii.gz';
 out_bval_file   = 'test/test_sub_CAP/MKCurve/CAP-dwi-b1000-b3000.bval';
@@ -23,7 +23,6 @@ extract_DWI_shells(input_nii_file, input_bval_file, input_bvec_file, removed_bva
 
 
 % Run MKCurve feature extraction.
-% Please configure module paths of 3D Slicer in the `run_DTI_feature_extraction_3DSlicer`
 run_MKCurve_feature_extraction(out_nii_file, out_bval_file, out_bvec_file, input_mask_nii_file, MKCurve_folder)
 
 

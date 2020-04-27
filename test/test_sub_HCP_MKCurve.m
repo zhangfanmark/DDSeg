@@ -1,6 +1,6 @@
 addpath(genpath('lib'));
 
-%% example to run tissue segmentation using DTI parameters
+%% example to run tissue segmentation using MK-Curve parameters
 
 input_nii_file      = 'test/test_sub_HCP/HCP-100337.nii.gz';
 input_bval_file     = 'test/test_sub_HCP/HCP-100337.bvals';
@@ -13,7 +13,6 @@ if ~exist(MKCurve_folder, 'dir')
 end
 
 % Run MKCurve feature extraction.
-% Please configure module paths of 3D Slicer in the `run_DTI_feature_extraction_3DSlicer`
 run_MKCurve_feature_extraction(input_nii_file, input_bval_file, input_bvec_file, input_mask_nii_file, MKCurve_folder)
 
 
