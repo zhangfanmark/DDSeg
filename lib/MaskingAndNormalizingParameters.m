@@ -1,6 +1,6 @@
 function MaskingAndNormalizingParameters(parameter_folder, mask_file, feature_mat_folder, parameter_type)
 
-feature_list = get_feature_list(parameter_type);
+[feature_list, feature_range] = get_feature_list(parameter_type);
 
 brain_mask_nii = load_nii(mask_file);
 brain_mask = brain_mask_nii.img > 0;
@@ -8,6 +8,8 @@ brain_mask = brain_mask_nii.img > 0;
 for f_idx = 1:length(feature_list)
     
     parameter_mat_file = fullfile(feature_mat_folder, [feature_list{f_idx}, '_3D_masked_normalized.mat']);
+    
+    parameter_range = feature_range(f_idx, :);
     
     disp([' - masking and normalizing: ', feature_list{f_idx}])
     if ~exist(parameter_mat_file, 'file')
@@ -20,6 +22,10 @@ for f_idx = 1:length(feature_list)
 
         % masking
         parameter_map(~brain_mask) = nan;
+
+        % truncating
+        parameter_map(parameter_map < parameter_range(1)) = parameter_range(1);
+        parameter_map(parameter_map > parameter_range(2)) = parameter_range(2);
 
         % normalizing
         parameter_map_N_vec = parameter_map(brain_mask);
