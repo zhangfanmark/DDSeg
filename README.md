@@ -1,8 +1,13 @@
-# DeepDWITissueSegmentation
+# DDSeg: 
+
+A **D**eep learning method for **D**ifusion MRI **Seg**menation (DDSeg)
+
 
 This code implements deep learning tissue segmentation method using diffusion MRI data, as described in the following paper:
 
-    XXX
+    Fan Zhang, Anna Breger, Kang Ik Kevin Cho, Lipeng Ning, Carl-Fredrik Westin, Lauren O'Donnell, and Ofer Pasternak.
+    Deep Learning Based Segmentation of Brain Tissue from Diffusion MRI
+    NeuroImage 2021.
 
 Please download the pre-trained CNN models and testing data: 
 
