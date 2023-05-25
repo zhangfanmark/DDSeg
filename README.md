@@ -1,6 +1,6 @@
 # DDSeg: 
 
-A **D**eep learning method for **D**ifusion MRI **Seg**mentation (DDSeg)
+A **D**eep learning method for **D**iffusion MRI **Seg**mentation (DDSeg)
 
 
 This code implements deep learning tissue segmentation method using diffusion MRI data, as described in the following paper:
